@@ -1299,8 +1299,23 @@
             requestAnimationFrame(gameLoop);
         }
 
+        function resizeContainer() {
+            const container = document.getElementById('game-container');
+            const scaleX = window.innerWidth / 450;
+            const scaleY = window.innerHeight / 800;
+            // Fit exactly inside mobile screen, but don't scale up past 1.0 on desktop
+            const scale = Math.min(scaleX, scaleY, 1);
+            container.style.transform = `scale(${scale})`;
+            container.style.transformOrigin = 'center center';
+        }
+
+        window.addEventListener('resize', resizeContainer);
+
         // Boot system on window ready
-        window.onload = init;
+        window.onload = () => {
+            init();
+            resizeContainer();
+        };
     </script>
 </body>
 </html>
