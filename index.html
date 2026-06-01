@@ -1054,7 +1054,7 @@
             ctx.strokeStyle = isTop ? '#00ffff' : '#ff007f';
             ctx.lineWidth = 3;
             ctx.shadowColor = isTop ? '#00ffff' : '#ff007f';
-            ctx.shadowBlur = 8;
+            ctx.shadowBlur = window.innerWidth > 768 ? 8 : 0;
 
             if (isTop) {
                 // Shaft body
@@ -1169,7 +1169,7 @@
 
             // Glowing halo
             ctx.shadowColor = '#00ffff';
-            ctx.shadowBlur = 12;
+            ctx.shadowBlur = window.innerWidth > 768 ? 12 : 0;
 
             // Cybernetic metal capsule body
             const bodyGrad = ctx.createRadialGradient(0, -1, 3, 0, 0, bird.r);
@@ -1194,7 +1194,7 @@
             // Futuristic pink power beak
             ctx.fillStyle = '#ff007f';
             ctx.shadowColor = '#ff007f';
-            ctx.shadowBlur = 8;
+            ctx.shadowBlur = window.innerWidth > 768 ? 8 : 0;
             ctx.beginPath();
             ctx.moveTo(bird.r - 2, -5);
             ctx.lineTo(bird.r + 11, 0);
@@ -1221,7 +1221,7 @@
             ctx.strokeStyle = '#00ffff';
             ctx.lineWidth = 1.5;
             ctx.shadowColor = '#00ffff';
-            ctx.shadowBlur = 5;
+            ctx.shadowBlur = window.innerWidth > 768 ? 5 : 0;
             ctx.beginPath();
             ctx.moveTo(-11, -4);
             ctx.lineTo(9, wingY);
